@@ -28,8 +28,12 @@ app.use(productRoutes)
 const shopRoutes = require('./routes/shop')
 app.use(shopRoutes)
 
+const orderRoutes = require('./routes/order');
+app.use(orderRoutes);
+
+
 sequelize
-    .sync()
+    .sync({ force: true })
     .then(() => {
         return models.User.findByPk(1)
     })
@@ -40,7 +44,17 @@ sequelize
         return user;
     })
     .then((user) => {
-        return user.createCart();
+         
+        
+          return user.getCart().then(cart => {
+            if (!cart) {
+                
+                
+                return user.createCart();
+            }
+            return cart;
+            
+        });
     })
     .then((user) => {
         console.log(user)
