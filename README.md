@@ -27,25 +27,25 @@ npm install -g sequelize-cli
 
 ##  Getting Started
 
-  Clone the repository:
+ ### Clone the repository:
 
   ```bash
 
 git clone https://github.com/Eallekors/web_shop
 cd <repository-name>
 ```
-Install dependencies:
+### Install dependencies:
 
 ```bash
 
 npm install
 ```
-Configure database variables:
+### Configure database variables:
 
 Set up the db file in the project folder util with your database configuration:
 
 
-Setup the database:
+### Setup the database:
 
 Ensure your database is running, then run the following command to start the application. It will automatically synchronize the database models:
 
